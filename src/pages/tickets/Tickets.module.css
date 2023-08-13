@@ -1,0 +1,25 @@
+.priceHint {
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+.accordion {
+  margin: 1rem auto;
+}
+
+.accordions {
+  margin-bottom: 3rem;
+}
+/* @media screen and (max-width: 700px) {
+  body {
+    font-size: 18px;
+  }
+
+  .accordion {
+    width: 90%;
+  }
+} */
