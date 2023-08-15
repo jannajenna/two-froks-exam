@@ -5,8 +5,6 @@ import Anchor from "../Anchor";
 
 
 export default function Card({ data }) {
-
-    console.log(data)
     return (
         <div>
 

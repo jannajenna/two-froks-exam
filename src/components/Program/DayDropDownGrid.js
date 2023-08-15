@@ -1,9 +1,9 @@
 import { Collapse } from "react-collapse";
 import styles from "./ProgramElements.module.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
+
 import Card from "./Card";
 import List from "./List";
-
 import { useContext } from "react";
 import { ProgramContext } from "@/contexts/viewModeContext";
 
@@ -17,7 +17,8 @@ export default function DayDropDownGrid({ open, toggle, dataStage, day }) {
             <div className={`${styles.color_day} ${styles.flex_row}`} onClick={toggle}>
                 <h3>{day}</h3>
                 <div>
-                    {open ? <AiOutlineMinus className={styles.icon_size} /> : <AiOutlinePlus className={styles.icon_size} />}
+                    {open ? <AiOutlineMinus className={styles.icon_size} /> :
+                        <AiOutlinePlus className={styles.icon_size} />}
                 </div>
             </div>
             <Collapse isOpened={open}>

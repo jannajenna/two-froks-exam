@@ -32,8 +32,6 @@ export async function getStaticPaths() {
     };
 }
 
-
-
 export async function getStaticProps(context) {
     const slug = context.params.slug;
     const url = 'https://blush-entertaining-raver.glitch.me/bands/' + slug;
@@ -52,6 +50,3 @@ export async function getStaticProps(context) {
         },
     };
 }
-
-
-/* {data.map((band) => (<h2 key={band.name}>{band.name}</h2>))} */
