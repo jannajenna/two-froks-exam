@@ -1,12 +1,11 @@
-import styles from "../ProgramElements.module.css"
+import styles from "./ProgramElements.module.css";
 import { AiOutlineStar } from "react-icons/ai"
 
 
-export default function Card({ bands, data, name }) {
+export default function Card({ data }) {
 
-    //console.log('DATA:', data);
-    //console.log('BANDS:', bands);
-    //console.log('NAME:', name);
+    //console.log(data)
+    //console.log("card")
 
     return (
         <div>

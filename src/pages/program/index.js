@@ -1,11 +1,19 @@
 import { Hero } from "@/components/Hero/Hero";
 import Filterprogram from "@/components/FilterProgram/Filterprogram";
+import { ProgramProvider } from "@/contexts/viewModeContext";
+
 
 export default function Program({ data, bands }) {
     return (
         <>
+
             <Hero title="Program" />
-            <Filterprogram data={data} bands={bands} />
+            <ProgramProvider>
+                <Filterprogram data={data} bands={bands} />
+            </ProgramProvider>
+
+
+
         </>
     );
 }

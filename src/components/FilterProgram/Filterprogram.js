@@ -1,7 +1,7 @@
 import { useState } from "react";
 //components imported
 import Viewmode from "@/components/Program/Viewmode";
-import DayGrid from "@/components/Program/Grid/DayGrid";
+import DayGrid from "@/components/Program/DayGrid";
 //Filtercomponnts
 import ByDay from "./ByDay";
 import ByStage from "./ByStage";
@@ -9,6 +9,8 @@ import ByTime from "./ByTime";
 import styles from "./Filterprogram.module.css";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs"
 import { Collapse } from "react-collapse";
+
+//View mode selection
 
 export default function Filterprogram({ data, bands }) {
 
@@ -34,13 +36,24 @@ export default function Filterprogram({ data, bands }) {
     const vanaheimData = data.Vanaheim
 
     let selectedData;
-    if (selectedStage === "Midgard") {
-        selectedData = midgardData;
-    } else if (selectedStage === "Jotunheim") {
-        selectedData = jotunheimData;
-    } else if (selectedStage === "Vanaheim") {
-        selectedData = vanaheimData;
-    }
+    selectedData = (selectedStage === "Midgard") ? midgardData :
+        (selectedStage === "Jotunheim") ? jotunheimData :
+            (selectedStage === "Vanaheim") ? vanaheimData : null;
+
+    //Viewmode: card or list
+    /* const [selectedView, setSelectedView] = useState("Card");
+    const handleViewClick = (view) => setSelectedView(view); */
+
+    /*   let selectedMode;
+      if (selectedView === "Card") {
+          selectedMode = "Card"
+      } else if (selectedView === "List") {
+          selectedMode = "List"
+      } else {
+          selectedMode = "Card"
+      } */
+
+    //console.log("View selected:", selectedMode);
 
     return (
         <div >
@@ -56,11 +69,12 @@ export default function Filterprogram({ data, bands }) {
                     <h5 className={styles.clear}>Clear all</h5>
                 </Collapse>
             </div>
-            <Viewmode />
+            <Viewmode /* onviewclick={handleViewClick} */ />
             <DayGrid
                 bands={bands}
                 dataStage={selectedData}
                 name={selectedStage}
+            /* viewMode={selectedMode} */
             />
         </div>
     );

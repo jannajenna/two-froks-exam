@@ -12,7 +12,7 @@ const daysOfWeek = [
   { DayComponent: Sunday, dayIndex: 6 },
 ];
 
-export default function DayGrid({ bands, name, dataStage }) {
+export default function DayGrid({ bands, name, dataStage, selectedMode }) {
   //Accordion days
   const [open, setOpen] = useState(0);
   const toggle = (index) => {
@@ -33,6 +33,7 @@ export default function DayGrid({ bands, name, dataStage }) {
           open={open === dayIndex}
           toggle={() => toggle(dayIndex)}
           dataStage={dataStage}
+          selectedMode={selectedMode}
         />
       ))}
     </div>
