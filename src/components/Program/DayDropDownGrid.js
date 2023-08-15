@@ -7,16 +7,11 @@ import List from "./List";
 import { useContext } from "react";
 import { ProgramContext } from "@/contexts/viewModeContext";
 
-export default function DayDropDownGrid({ bands, open, toggle, dataStage, day }) {
+export default function DayDropDownGrid({ open, toggle, dataStage, day }) {
     //Remove breaks from program
     const onlyBands = dataStage?.filter((band) => band.act !== "break")
-
     //Display cards or list elements
     const { mode } = useContext(ProgramContext);
-
-    //Images?
-    console.log(bands)
-
     return (
         <div className={styles.flex_column}>
             <div className={`${styles.color_day} ${styles.flex_row}`} onClick={toggle}>

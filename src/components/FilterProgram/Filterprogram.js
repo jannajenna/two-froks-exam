@@ -11,17 +11,12 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs"
 import { Collapse } from "react-collapse";
 
 //View mode selection
-
-export default function Filterprogram({ data, bands }) {
+export default function Filterprogram({ data }) {
 
     //Accordion
     const [open, setOpen] = useState(false);
     const toggle = () => {
-        if (open) {
-            return setOpen(false);
-        }
-        setOpen(true);
-
+        setOpen(open => !open);
     };
 
     //Filter stages
@@ -40,21 +35,6 @@ export default function Filterprogram({ data, bands }) {
         (selectedStage === "Jotunheim") ? jotunheimData :
             (selectedStage === "Vanaheim") ? vanaheimData : null;
 
-    //Viewmode: card or list
-    /* const [selectedView, setSelectedView] = useState("Card");
-    const handleViewClick = (view) => setSelectedView(view); */
-
-    /*   let selectedMode;
-      if (selectedView === "Card") {
-          selectedMode = "Card"
-      } else if (selectedView === "List") {
-          selectedMode = "List"
-      } else {
-          selectedMode = "Card"
-      } */
-
-    //console.log("View selected:", selectedMode);
-
     return (
         <div >
             <div className={styles.bkg}>
@@ -69,12 +49,10 @@ export default function Filterprogram({ data, bands }) {
                     <h5 className={styles.clear}>Clear all</h5>
                 </Collapse>
             </div>
-            <Viewmode /* onviewclick={handleViewClick} */ />
+            <Viewmode />
             <DayGrid
-                bands={bands}
                 dataStage={selectedData}
                 name={selectedStage}
-            /* viewMode={selectedMode} */
             />
         </div>
     );

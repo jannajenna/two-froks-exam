@@ -1,14 +1,15 @@
 import styles from "./ProgramElements.module.css";
 import { AiOutlineStar } from "react-icons/ai"
 
+import Anchor from "../Anchor";
+
 
 export default function Card({ data }) {
 
-    //console.log(data)
-    //console.log("card")
-
+    console.log(data)
     return (
         <div>
+
             <div className={`${styles.card_container} ${styles.bkg}`}>
                 <div className={styles.img_container}>
                     {/* <img className={styles.img} src="" alt=""></img> */}
@@ -22,9 +23,8 @@ export default function Card({ data }) {
                     <hr className={styles.solid}></hr>
                 </div>
             </div>
-            <div>
 
-            </div>
+
         </div >
     );
 }

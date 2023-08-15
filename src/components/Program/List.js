@@ -2,8 +2,6 @@ import styles from "./ProgramElements.module.css"
 import { AiOutlineStar } from "react-icons/ai"
 
 export default function List({ data }) {
-
-    console.log("list")
     return (
         <div>
             <div className={styles.bkg}>

@@ -3,21 +3,16 @@ import Filterprogram from "@/components/FilterProgram/Filterprogram";
 import { ProgramProvider } from "@/contexts/viewModeContext";
 
 
-export default function Program({ data, bands }) {
+export default function Program({ data }) {
     return (
         <>
-
             <Hero title="Program" />
             <ProgramProvider>
-                <Filterprogram data={data} bands={bands} />
+                <Filterprogram data={data} />
             </ProgramProvider>
-
-
-
         </>
     );
 }
-
 
 // Function to fetch data from the API
 export async function getServerSideProps() {
